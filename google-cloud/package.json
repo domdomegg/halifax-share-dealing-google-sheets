@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@google-cloud/pubsub": "^0.18.0",
     "googleapis": "^42",
     "halifax-share-dealing-sdk": "^1.4.0"
   }
