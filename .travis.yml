@@ -1,0 +1,7 @@
+language: node_js
+node_js: node
+jobs:
+  include:
+  - name: "Lint"
+    install: npm install standard
+    script: npm run lint
