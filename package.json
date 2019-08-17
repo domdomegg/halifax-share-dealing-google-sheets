@@ -1,0 +1,21 @@
+{
+  "name": "halifax-share-dealing-google-sheets",
+  "license": "MIT",
+  "author": "Adam Jones (domdomegg)",
+  "devDependencies": {
+    "standard": "^13.1.0"
+  },
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/domdomegg/halifax-share-dealing-google-sheets.git"
+  }
+}
