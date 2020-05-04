@@ -13,43 +13,37 @@ const sd = halifaxShareDealingSdk({
   }
 })
 
-exports.main = () => {
-  const accountsPromise = sd.login()
-    .then(sd.getAccounts)
-  const authPromise = new google.auth.GoogleAuth({
-    scopes: ['https://www.googleapis.com/auth/spreadsheets']
-  }).getClient()
+exports.main = async () => {
+  const [accounts, auth] = await Promise.all([
+    sd.login().then(sd.getAccounts),
+    new google.auth.GoogleAuth({ scopes: ['https://www.googleapis.com/auth/spreadsheets'] }).getClient()
+  ])
 
-  Promise.all([accountsPromise, authPromise]).then(([accounts, auth]) => {
-    const account = accounts.find(account => account.accountId === process.env.ACCOUNT_ID)
+  const account = accounts.find(account => account.accountId === process.env.ACCOUNT_ID)
 
-    const now = new Date()
-    const timeString = now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds()
-    const request = {
-      spreadsheetId: process.env.SPREADSHEET_ID,
+  const now = new Date()
+  const timeString = now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds()
+  const request = {
+    spreadsheetId: process.env.SPREADSHEET_ID,
+    range: 'A:F',
+    valueInputOption: 'USER_ENTERED',
+    insertDataOption: 'INSERT_ROWS',
+    resource: {
       range: 'A:F',
-      valueInputOption: 'USER_ENTERED',
-      insertDataOption: 'INSERT_ROWS',
-      resource: {
-        range: 'A:F',
-        majorDimension: 'ROWS',
-        values: [
-          [
-            now.getTime() / 1000, // Unix time
-            now.toISOString().slice(0, 10), // Date (UTC)
-            timeString, // Time (UTC)
-            account.totalSecurities.asText, // Securities
-            account.availableToInvest.asText, // Cash
-            account.totalValue.asText // Total
-          ]
+      majorDimension: 'ROWS',
+      values: [
+        [
+          now.getTime() / 1000, // Unix time
+          now.toISOString().slice(0, 10), // Date (UTC)
+          timeString, // Time (UTC)
+          account.totalSecurities.asText, // Securities
+          account.availableToInvest.asText, // Cash
+          account.totalValue.asText // Total
         ]
-      },
-      auth
-    }
+      ]
+    },
+    auth
+  }
 
-    const sheets = google.sheets({ version: 'v4', auth })
-    sheets.spreadsheets.values.append(request, function (err, response) {
-      if (err) console.error(err)
-    })
-  })
+  return google.sheets('v4').spreadsheets.values.append(request)
 }
