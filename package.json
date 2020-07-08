@@ -1,6 +1,6 @@
 {
   "name": "halifax-share-dealing-google-sheets",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "author": "Adam Jones (domdomegg)",
   "devDependencies": {
     "standard": "^13.1.0"
