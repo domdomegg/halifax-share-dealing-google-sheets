@@ -8,7 +8,7 @@ These apps use the [halifax-share-dealing-sdk](https://github.com/domdomegg/hali
 
 ## Contributing
 
-PRs are welcomed, please submit them on [Github](https://github.com/domdomegg/halifax-share-dealing-google-sheets/pulls).
+PRs are welcomed, please submit them on [GitHub](https://github.com/domdomegg/halifax-share-dealing-google-sheets/pulls).
 
 NPM commands need to be run from the top level of the repository. This may change in future if different implementations need their own scripts or dependencies.
 

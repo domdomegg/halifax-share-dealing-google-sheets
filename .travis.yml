@@ -1,6 +1,0 @@
-language: generic
-jobs:
-  include:
-  - name: "Lint"
-    install: npm install standard
-    script: npm run lint
