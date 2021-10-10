@@ -1,5 +1,5 @@
 const { google } = require('googleapis')
-const halifaxShareDealingSdk = require('halifax-share-dealing-sdk')
+const halifaxShareDealingSdk = require('halifax-share-dealing-sdk').default
 
 const sd = halifaxShareDealingSdk({
   site: process.env.SITE,
