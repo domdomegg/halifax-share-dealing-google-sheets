@@ -28,7 +28,7 @@ These instructions should be considered part of the software and hence are provi
 	- Memory allocated: `128 MB`
 	- Trigger: `Cloud Pub/Sub`
 	- Topic: create a new topic called `halifax-share-dealing-google-sheets-pubsub-topic`
-	- Source code: use the inline editor, set the runtime to `Node.js 10` and copy the contents of [index.js](https://raw.githubusercontent.com/domdomegg/halifax-share-dealing-google-sheets/master/google-cloud/index.js) and [package.json](https://raw.githubusercontent.com/domdomegg/halifax-share-dealing-google-sheets/master/google-cloud/package.json) in.
+	- Source code: use the inline editor, set the runtime to `Node.js 14` and copy the contents of [index.js](https://raw.githubusercontent.com/domdomegg/halifax-share-dealing-google-sheets/master/google-cloud/index.js) and [package.json](https://raw.githubusercontent.com/domdomegg/halifax-share-dealing-google-sheets/master/google-cloud/package.json) in.
 	- Function to execute: `main`
 	- Timeout: `120 seconds` (it usually executes in about 30, but just to be safe)
 	- Service account: `App Engine default service account` (this needs to be the service account you shared the sheet with)
@@ -41,7 +41,6 @@ These instructions should be considered part of the software and hence are provi
 		- `FATHER`: Answer to question `Your father's FIRST name`
 		- `BIRTHPLACE`: Answer to question `Your place/town of birth`
 		- `SCHOOL`: Answer to question `The name of your first school`
-		- `ACCOUNT_ID`: Account id of the account to get the valuation for. Probably looks like `000123456` or `000123456ABCD`
 		- `SPREADSHEET_ID`: The Google Sheets [spreadsheet id](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id) for the sheet you set up earlier
 4. At this point you can test out the Cloud Function.
 	- View the cloud function and navigate to the `Testing` tab

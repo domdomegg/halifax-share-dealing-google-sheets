@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "googleapis": "^42",
-    "halifax-share-dealing-sdk": "^1.5.0"
+    "googleapis": "^88.2.0",
+    "halifax-share-dealing-sdk": "^1.5.7"
   }
 }
