@@ -2,6 +2,7 @@
   "name": "halifax-share-dealing-google-sheets",
   "license": "CC0-1.0",
   "author": "Adam Jones (domdomegg)",
+  "private": true,
   "devDependencies": {
     "standard": "^16.0.4"
   },
