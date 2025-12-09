@@ -1,6 +1,6 @@
 # halifax-share-dealing-google-sheets: Google Cloud Platform
 
-This is a GCP based implementation that uses the [halifax-share-dealing-sdk](https://github.com/domdomegg/halifax-share-dealing-sdk) to track your valuation in a Google Sheet. It supports Halifax Share Dealing, IWeb Share Dealing, Bank of Scotland Share Dealing and The Lloyds Bank Direct Investments Service.
+This is a GCP based implementation that uses the [halifax-share-dealing-sdk](https://github.com/domdomegg/halifax-share-dealing-sdk) to track your valuation in a Google Sheet. It supports Halifax Share Dealing, IWeb Share Dealing, Scottish Widows Share Dealing, Bank of Scotland Share Dealing and The Lloyds Bank Direct Investments Service.
 
 ## Architecture
 
@@ -34,7 +34,7 @@ These instructions should be considered part of the software and hence are provi
 	- Service account: `App Engine default service account` (this needs to be the service account you shared the sheet with)
 	- Retry on failure: You may want to enable this, in case an unexpected error happens (e.g. downtime at HSD) the function will retry later. It inserts the timestamp when it succeeds in the sheet so wouldn't insert incorrect data. However this does mean that it will retry even if it's not a temporary error which could rack up costs e.g. HSD change their web interface so the web scraping breaks.
 	- Environment variables: Environment variables are not a secure way to store credentials and this method is not reccommended for real apps. The sample code expects the following environment variables to be set:
-		- `SITE`: one of `halifax`, `iweb`, `bos`, `lloyds`
+		- `SITE`: one of `halifax`, `iweb`, `scottishwidows`, `bos`, `lloyds`
 		- `USERNAME`
 		- `PASSWORD`
 		- `MOTHER`: Answer to question `Your mother's FIRST name`
