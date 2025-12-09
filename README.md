@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/com/domdomegg/halifax-share-dealing-google-sheets/master)](https://travis-ci.com/domdomegg/halifax-share-dealing-google-sheets) [![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/domdomegg/halifax-share-dealing-google-sheets/blob/master/LICENSE)
 
-These apps use the [halifax-share-dealing-sdk](https://github.com/domdomegg/halifax-share-dealing-sdk) to track your valuation in a Google Sheet. They support Halifax Share Dealing, IWeb Share Dealing, Bank of Scotland Share Dealing and The Lloyds Bank Direct Investments Service.
+These apps use the [halifax-share-dealing-sdk](https://github.com/domdomegg/halifax-share-dealing-sdk) to track your valuation in a Google Sheet. They support Halifax Share Dealing, IWeb Share Dealing, Scottish Widows Share Dealing, Bank of Scotland Share Dealing and The Lloyds Bank Direct Investments Service.
 
 - [Google Cloud Platform](https://github.com/domdomegg/halifax-share-dealing-google-sheets/tree/master/google-cloud)
 
